@@ -1,4 +1,9 @@
 const DataTable = () => {
+
+    const handleClick = () => {
+        // alert('Button was clicked!')
+        document.getElementById("dropdown").classList.toggle("show")
+    }
     return (
     <div className="container">
         <div className="add-container">
@@ -24,6 +29,16 @@ const DataTable = () => {
                     value={""}
                     onChange={() => {}}
                 />
+
+                {/* <div className="dropdown">
+                    <input className="dropdown-btn" onClick={handleClick} placeholder="Select Options"/>
+                    <div className="dropdown-content" id="dropdown">
+                        <label><input type="checkbox" value="Maths"/>Maths</label>
+                        <label><input type="checkbox" value="English"/>English</label>
+                        <label><input type="checkbox" value="Frech"/>Frech</label>
+                    </div>
+
+                </div> */}
             </div>
 
             <button className="add">ADD</button>
@@ -51,10 +66,18 @@ const DataTable = () => {
                     </tr>
                 </thead>
                 <tbody></tbody>
+
+                <div className="pagination"></div>
             </table>
 
         </div>
+        {/* <script>
+            function toggleDropdown(){
+                document.getElementById("dropdown").classList.toggle("show")
+            }
+        </script> */}
     </div>
+    
     );
 }
 

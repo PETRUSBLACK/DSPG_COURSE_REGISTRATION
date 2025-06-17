@@ -1,4 +1,37 @@
 <!DOCTYPE html>
 <html>
-    
+<head>
+  <title>Select with Multiple Options and Inputs</title>
+</head>
+<body>
+
+  <form action="/submit" method="post">
+    <section>
+      <h3>Choose your favorite fruits:</h3>
+      
+      <label for="fruits">Fruits:</label><br>
+      <select id="fruits" name="fruits[]" multiple>
+        <option value="apple">Apple</option>
+        <option value="banana">Banana</option>
+        <option value="cherry">Cherry</option>
+        <option value="date">Date</option>
+      </select>
+      
+      <br><br>
+      
+      <label for="name">Your Name:</label><br>
+      <input type="text" id="name" name="name" required>
+      
+      <br><br>
+      
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required>
+      
+      <br><br>
+      
+      <button type="submit">Submit</button>
+    </section>
+  </form>
+
+</body>
 </html>
