@@ -32,40 +32,148 @@ body {
   gap: 5px;
 }
 
-.dropdown{
+input[type="text"],
+button{
+  appearance: none;
+  outline: none;
+  border: 0;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: "Playpen Sans", cursive;
+}
+
+button{
+  font-weight: 600;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.add{
+  background-color: #73addf;
+  color: #fff;
+  font-weight: 600;
+}
+
+.search-imput{
+  width: 200px;
+}
+
+.search-table-container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  align-items: center;
+}
+
+table{
+  border-collapse: collapse;
+}
+
+table td,
+table th{
+  border: 1px solid #ddd;
+  padding: 8px;
+  max-width: 350px;
+  word-wrap: break-word;
+  text-align: left;
+  color: #fff;
+}
+
+table td{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+table tr:hover {
+  background-color: #3f3c3c;
+}
+
+tr th{
+  min-width: 100px;
+}
+
+table th{
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04aa6d;
+  color: white;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.edit{
+  background-color: #73addf;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.delete{
+  background-color: lightcoral;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 600px){
+  tr th {
+    min-width: unset;
+  }
+
+  table td{
+    font-size: 14px;
+  }
+
+  .actions{
+    flex-wrap: wrap;
+    gap: 2px;
+  }
+
+  button{
+    margin: 3px 0;
+  }
+}
+/* .dropdown{
   position: relative;
   display: inline-block;
-}
-.dropdown-btn{
+} */
+/* .dropdown-btn{
   padding: 10px;
   border: 1px solid #ccc;
   width: 100%;
   text-align: left;
   cursor: pointer;
   /* background-color: #fff; */
-}
+/* }  */
 
-.dropdown-content{
+/* .dropdown-content{
   display: none;
   position: absolute;
   /* background-color: white; */
-  border: 1px solid #ccc;
-  max-width: 200px;
-  overflow-y: auto;
-  width: 100%;
+  /* border: 1px solid #ccc; */
+  /* max-width: 200px; */
+  /* overflow-y: auto; */
+  /* width: 100%; */
   /* z-index: 1; */
-}
+/* }  */
 
-.dropdown-content label{
+/* .dropdown-content label{
   display: block;
   padding: 5px;
   cursor: pointer;
-}
+} */
 
-.dropdown-content label:hover{
+/* .dropdown-content label:hover{ */
   /* background-color: #f0f0f0; */
-}
+/* } */
 
-.show{
+/* .show{
   display: block;
-}
+
+/* }  */

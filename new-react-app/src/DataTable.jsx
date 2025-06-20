@@ -1,9 +1,9 @@
 const DataTable = () => {
 
-    const handleClick = () => {
+    // const handleClick = () => {
         // alert('Button was clicked!')
-        document.getElementById("dropdown").classList.toggle("show")
-    }
+        // document.getElementById("dropdown").classList.toggle("show")
+    // }
     return (
     <div className="container">
         <div className="add-container">
@@ -61,11 +61,21 @@ const DataTable = () => {
                         <th>Gender</th>
                         <th>Age</th>
                         <th>Action</th>
-                        <th>Courses</th>
+                        {/* <th>Courses</th> */}
 
                     </tr>
                 </thead>
-                <tbody></tbody>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>Male</td>
+                        <td>23</td>
+                        <td className="actions">
+                            <button className="edit">Edit</button>
+                            <button className="delete">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
 
                 <div className="pagination"></div>
             </table>
