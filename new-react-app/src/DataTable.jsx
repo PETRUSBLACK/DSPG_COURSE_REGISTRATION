@@ -1,4 +1,32 @@
+import { useState } from "react";
+
 const DataTable = () => {
+    const [formData, setFormData] = useState({ name: "", gender: "", age: " "});
+    const [data, setData] = useState([])
+
+    const handleInputChange = (e) => {
+        setFormData({...formData, [e.target.name]: e.target.value})
+
+    };
+
+    const handleAddClick = () => {
+        if(formData.name &&  formData.gender && formData.age){
+            const newItem = {
+                id: Date.now(),
+                name: formData.name,
+                gender: formData.gender,
+                age: formData.age
+            };
+            setData([...data, newItem]);
+            setFormData({name: "", gender: "", age: ""});
+        }
+    };
+
+    const handleDelete = (id) => {
+        const updatedList = data.filter( (item) => item.id !== id);
+        setData(updatedList)
+    }
+    
 
     // const handleClick = () => {
         // alert('Button was clicked!')
@@ -12,22 +40,22 @@ const DataTable = () => {
                     type="text"
                     placeholder="Name"
                     name="name"
-                    value={""}
-                    onChange={() => {}}
+                    value={formData.name}
+                    onChange={handleInputChange}
                 />
                 <input 
                     type="text"
                     placeholder="Gender"
                     name="gender"
-                    value={""}
-                    onChange={() => {}}
+                    value={formData.gender}
+                    onChange={handleInputChange}
                 />
                 <input 
                     type="text"
                     placeholder="Age"
                     name="age"
-                    value={""}
-                    onChange={() => {}}
+                    value={formData.age}
+                    onChange={handleInputChange}
                 />
 
                 {/* <div className="dropdown">
@@ -41,7 +69,7 @@ const DataTable = () => {
                 </div> */}
             </div>
 
-            <button className="add">ADD</button>
+            <button className="add" onClick={handleAddClick}>ADD</button>
 
         </div>
         <div className="search-table-container">
@@ -66,15 +94,21 @@ const DataTable = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>John</td>
-                        <td>Male</td>
-                        <td>23</td>
+                    {
+                        data.map( item => (
+                    <tr key={item.id}>
+                        <td id={item.id}>{item.name}</td>
+                        <td id={item.id}>{item.gender}</td>
+                        <td id={item.id}>{item.age}</td>
                         <td className="actions">
                             <button className="edit">Edit</button>
-                            <button className="delete">Delete</button>
+                            <button className="delete" onClick={ () => handleDelete(item.id)}>Delete</button>
                         </td>
                     </tr>
+
+                        ))
+                    }
+
                 </tbody>
 
                 <div className="pagination"></div>
